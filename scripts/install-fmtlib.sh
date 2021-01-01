@@ -7,7 +7,7 @@ if ! [ "$(id -u)" = 0 ]; then
 fi
 set -ex
 
-VERSION=${VERSION:-"5.3.0"}
+VERSION=${VERSION:-"7.0.1"}
 
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 

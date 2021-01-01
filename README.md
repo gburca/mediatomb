@@ -86,29 +86,29 @@ The Gerbera Team maintains a Homebrew Tap to allow for easy installation of Gerb
 
 ## Dependencies
 
-| Lib          	| Version 	| Required? 	| Note                 	     | Compile-time option | Default  |
-|--------------	|---------	|-----------	|--------------------------- | --------------------| -------- |
-| libupnp      	| >=1.12.1 	| XOR libnpupnp | [pupnp]                    |                     |          |
-| libnpupnp     | >=4.0.11 	| XOR libupnp   | [nppupnp]                  |                     |          |
-| libuuid      	|         	| Depends on OS | On \*BSD native libuuid is used, others require e2fsprogs-libuuid | | |
-| pugixml     	|         	| Required  	| [pugixml]         	     |                     |          |
-| libiconv     	|         	| Required  	|                      	     |                     |          |
-| sqlite3      	|         	| Required  	| Database storage     	     |                     |          |
-| zlib          |        	| Required  	|                            |                     |          |
-| fmtlib        |        	| Required  	|                            |                     |          |
-| spdlog        |        	| Required  	|                            |                     |          |
-| duktape      	| 2.1.0   	| Optional  	| Scripting Support    	     | WITH_JS             | Enabled  |
-| mysql        	|         	| Optional  	| Alternate database storage | WITH_MYSQL          | Disabled |
-| curl         	|         	| Optional  	| Enables web services 	     | WITH_CURL           | Enabled  |
-| [taglib]      | 1.11.1  	| Optional  	| Audio tag support          | WITH_TAGLIB         | Enabled  |
-| libmagic     	|         	| Optional  	| File type detection  	     | WITH_MAGIC          | Enabled  |
-| libmatroska 	|         	| Optional  	| MKV metadata               | WITH_MATROSKA       | Enabled  |
-| ffmpeg/libav 	|         	| Optional  	| File metadata              | WITH_AVCODEC        | Disabled |
-| libexif      	|         	| Optional  	| JPEG Exif metadata         | WITH_EXIF           | Enabled  |
-| libexiv2    	|         	| Optional  	| Exif, IPTC, XMP metadata   | WITH_EXIV2          | Disabled |
-| lastfmlib    	| 0.4.0   	| Optional  	| Enables scrobbling   	     | WITH_LASTFM         | Disabled |
-| ffmpegthumbnailer |           | Optional      | Generate video thumbnails  | WITH_FFMPEGTHUMBNAILER | Disabled |
-| inotify       |               | Optional      | Efficient file monitoring  | WITH_INOTIFY      | Enabled |
+| Lib               | Version   | Required?     | Note                                                              | Compile-time option    | Default  |
+| --------------    | --------- | -----------   | ---------------------------                                       | --------------------   | -------- |
+| libupnp           | >=1.12.1  | XOR libnpupnp | [pupnp]                                                           |                        |          |
+| libnpupnp         | >=4.0.11  | XOR libupnp   | [nppupnp]                                                         |                        |          |
+| libuuid           |           | Depends on OS | On \*BSD native libuuid is used, others require e2fsprogs-libuuid |                        |          |
+| pugixml           |           | Required      | [pugixml]                                                         |                        |          |
+| libiconv          |           | Required      |                                                                   |                        |          |
+| sqlite3           |           | Required      | Database storage                                                  |                        |          |
+| zlib              |           | Required      |                                                                   |                        |          |
+| fmtlib            | 7.0.0     | Required      |                                                                   |                        |          |
+| spdlog            | 1.7.0     | Required      |                                                                   |                        |          |
+| duktape           | 2.1.0     | Optional      | Scripting Support                                                 | WITH_JS                | Enabled  |
+| mysql             |           | Optional      | Alternate database storage                                        | WITH_MYSQL             | Disabled |
+| curl              |           | Optional      | Enables web services                                              | WITH_CURL              | Enabled  |
+| [taglib]          | 1.11.1    | Optional      | Audio tag support                                                 | WITH_TAGLIB            | Enabled  |
+| libmagic          |           | Optional      | File type detection                                               | WITH_MAGIC             | Enabled  |
+| libmatroska       |           | Optional      | MKV metadata                                                      | WITH_MATROSKA          | Enabled  |
+| ffmpeg/libav      |           | Optional      | File metadata                                                     | WITH_AVCODEC           | Disabled |
+| libexif           |           | Optional      | JPEG Exif metadata                                                | WITH_EXIF              | Enabled  |
+| libexiv2          |           | Optional      | Exif, IPTC, XMP metadata                                          | WITH_EXIV2             | Disabled |
+| lastfmlib         | 0.4.0     | Optional      | Enables scrobbling                                                | WITH_LASTFM            | Disabled |
+| ffmpegthumbnailer |           | Optional      | Generate video thumbnails                                         | WITH_FFMPEGTHUMBNAILER | Disabled |
+| inotify           |           | Optional      | Efficient file monitoring                                         | WITH_INOTIFY           | Enabled  |
 
 ## Licence
 
