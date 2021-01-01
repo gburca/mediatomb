@@ -73,10 +73,14 @@ sudo make install
   is too old.
 
 ```
-wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null \
+  | gpg --dearmor - \
+  | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
 sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
 sudo apt-get install cmake
-sudo apt-get install gcc-9 autoconf uuid-dev libtool libpugixml-dev libsqlite3-dev duktape-dev libcurl4-openssl-dev libtaglib-cil-dev libtag1-dev libmagic-dev libexif-dev libebml-dev zlib1g-dev
+sudo apt-get install gcc-9 autoconf uuid-dev libtool libpugixml-dev \
+  libsqlite3-dev duktape-dev libcurl4-openssl-dev libtaglib-cil-dev \
+  libtag1-dev libmagic-dev libexif-dev libebml-dev zlib1g-dev
 sudo ./scripts/install-pupnp.sh
 sudo ./scripts/install-fmtlib.sh
 sudo ./scripts/install-spdlog.sh
