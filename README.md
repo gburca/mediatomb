@@ -65,6 +65,22 @@ sudo make install
 
 #### On Ubuntu 18.04
 
+* The default `cmake` is too old. We need to install the latest:
+```
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null \
+  | gpg --dearmor - \
+  | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
+sudo apt-get install cmake
+```
+
+* Install GCC 9:
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-9
+```
+
 * `libspdlog-dev` is built with an internal version of `libfmt`. It needs to be
   re-built with `SPDLOG_FMT_EXTERNAL` so it doesn't conflict with gerbera's
   `libfmt`.
@@ -73,12 +89,7 @@ sudo make install
   is too old.
 
 ```
-wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null \
-  | gpg --dearmor - \
-  | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
-sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
-sudo apt-get install cmake
-sudo apt-get install gcc-9 autoconf uuid-dev libtool libpugixml-dev \
+sudo apt-get install autoconf uuid-dev libtool libpugixml-dev \
   libsqlite3-dev duktape-dev libcurl4-openssl-dev libtaglib-cil-dev \
   libtag1-dev libmagic-dev libexif-dev libebml-dev zlib1g-dev
 sudo ./scripts/install-pupnp.sh
