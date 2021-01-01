@@ -63,6 +63,26 @@ sudo make install
 
 ### Install prerequisites.
 
+#### On Ubuntu 18.04
+
+* `libspdlog-dev` is built with an internal version of `libfmt`. It needs to be
+  re-built with `SPDLOG_FMT_EXTERNAL` so it doesn't conflict with gerbera's
+  `libfmt`.
+* `libspdlog` 1.7.0 requires `libfmt` 5.3.0 (`apt install libfmt-dev` installs
+  version 4.0.0), gerbera requires `libfmt` 7.0.0 the `apt` installed version
+  is too old.
+
+```
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
+sudo apt-get install cmake
+sudo apt-get install gcc-9 autoconf uuid-dev libtool libpugixml-dev libsqlite3-dev duktape-dev libcurl4-openssl-dev libtaglib-cil-dev libtag1-dev libmagic-dev libexif-dev libebml-dev zlib1g-dev
+sudo ./scripts/install-pupnp.sh
+sudo ./scripts/install-fmtlib.sh
+sudo ./scripts/install-spdlog.sh
+env CXX=g++-9 CC=gcc-9 cmake .. -DWITH_MYSQL=0 -DWITH_MATROSKA=0
+```
+
 #### On Ubuntu 16.04
 ```
 apt-get install uuid-dev libsqlite3-dev libmysqlclient-dev \
